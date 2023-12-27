@@ -1,0 +1,22 @@
+
+.lesson-form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 10px;
+    
+}
+
+.text-danger {
+    font-weight: bold; 
+    color: #ff0000; 
+}
+
+
+.container.lesson-form-container label:not(.text-danger) {
+    color: #111010; 
+    font-weight: normal; 
+}
+
+

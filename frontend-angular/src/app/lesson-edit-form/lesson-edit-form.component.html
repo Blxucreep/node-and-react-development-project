@@ -1,17 +1,25 @@
-<div class="container" [formGroup]="lessonForm">
+<h1>Lesson Edit Form</h1>
+<p>Use this form to edit the details of the lesson.</p>
+<div class="container lesson-form-container" [formGroup]="lessonForm">
     <div class="row mt-2">
         <label class="col-md-1" for="title" [class]="lessonForm.get('title')?.invalid ? 'text-danger' : ''">Title</label>
         <input id="title" type="text" class="col-md-5" placeholder="Enter title" formControlName="title">
     </div>
     <div class="row mt-2">
         <label class="col-md-1" for="description" [class]="lessonForm.get('description')?.invalid ? 'text-danger' : ''">Description</label>
-        <textarea id="description" class="col-11" rows="4" placeholder="Enter description" formControlName="description"></textarea>
+        <div class="col-md-11">
+            <textarea id="description" rows="4" class="form-control" placeholder="Enter description" formControlName="description"></textarea>
+        </div>
     </div>
     <div class="row mt-2">
         <label class="col-md-1" for="category">Category</label>
-        <input id="category" type="text" class="col-md-2" placeholder="Enter category" formControlName="category">
+        <input id="category" type="text" class="col-md-5" placeholder="Enter category" formControlName="category">
+    </div>
+    <div class="row mt-2">
         <label class="col-md-1" for="level" ngbTooltip="Enter value between 1(basics) to 10(advanced)" placement="top">Level</label>
-        <input id="level" type="number" class="col-md-1" min="1" max="10" placeholder="Enter level" formControlName="level">
+        <input id="level" type="number" class="col-md-2" min="1" max="10" placeholder="Enter level" formControlName="level">
+    </div>
+    <div class="row mt-2">
         <label class="col-md-1" for="prerequisites">Prerequisite</label>
         <input id="prerequisites" type="text" class="col-md-6" placeholder="Enter prerequisite" formControlName="prerequisite">
     </div>
@@ -21,7 +29,7 @@
     </div>
     <div class="row mt-1">
         <label class="col-md-1" for="license">License</label>
-        <input id="license" type="text" class="col-md-5" placeholder="Enter license" formControlName="copyright">
+        <input id="license" type="text" class="col-md-5" placeholder="Enter license" formControlName="license">
     </div>
     <div class="row mt-2">
         <div class="col-md-2"></div>

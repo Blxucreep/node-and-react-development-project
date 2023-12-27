@@ -1,0 +1,40 @@
+/* Styles pour la page d'accueil */
+.welcome-page {
+    color: #0e0e0e; /* Couleur du texte */
+    text-align: center;
+    padding: 100px; /* Ajustez la marge intérieure selon vos besoins */
+    margin: 0; /* Assurez-vous qu'il n'y a pas de marges */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alignez le contenu en haut de la page */
+    align-items: center;
+}
+
+
+.welcome-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/pexels-rahul-pandit-1083633.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* Style pour le titre h1 */
+.welcome-page h1 {
+    font-size: 3em; /* Taille de la police du titre */
+    margin-bottom: 20px; /* Ajustez la marge inférieure selon vos besoins */
+    font-weight: bold; /* Rend le texte plus gras */
+    margin-top: 0; /* Ajustez la marge supérieure pour placer le titre tout en haut */
+}
+
+/* Style pour le sous-titre ou la description */
+.welcome-page p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}

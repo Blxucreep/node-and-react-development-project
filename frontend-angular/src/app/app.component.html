@@ -1,5 +1,11 @@
 <app-menu-nav-bar></app-menu-nav-bar>
 
-<br>
+<div class="container">
+  <router-outlet></router-outlet>
 
-<router-outlet></router-outlet>
+  <div class="welcome-page" [class.hide-text]="!isHomePage()">
+    <h1 *ngIf="isHomePage()">Welcome to Anki</h1>
+    <p *ngIf="isHomePage()">Anki is an application designed to help you learn and remember information efficiently. With Anki, you can create flashcards and use spaced repetition to optimize your learning process. Whether you're studying languages, preparing for exams, or simply want to expand your knowledge, Anki is here to assist you.</p>
+    <!-- Vous pouvez également ajouter un paragraphe de description si nécessaire -->
+  </div>
+</div>

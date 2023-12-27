@@ -24,6 +24,11 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { NumberDisplayComponent } from './number-display/number-display.component';
 import { NumberStepsComponent } from './number-steps/number-steps.component';
 import { NumberEditComponent } from './number-edit/number-edit.component';
+import { LoginComponent } from './login/login.component';
+import { SettingsComponent } from './settings/settings.component';
+import { SupportComponent } from './support/support.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { GlossaryComponent } from './glossary/glossary.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +42,11 @@ import { NumberEditComponent } from './number-edit/number-edit.component';
     NumberDisplayComponent,
     NumberStepsComponent,
     NumberEditComponent,
+    LoginComponent,
+    SettingsComponent,
+    SupportComponent,
+    CreateAccountComponent,
+    GlossaryComponent,
   ],
   imports: [
     BrowserModule,
