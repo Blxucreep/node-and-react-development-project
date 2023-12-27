@@ -34,18 +34,20 @@
                 <li ngbDropdown class="nav-item dropdown">
                     <a ngbDropdownToggle class="nav-link dropdown-toggle" id="helpDropdown" role="button" href="#">Help</a>
                     <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="helpDropdown">
-                        <a class="dropdown-item" href="#">Glossary</a>
+                        <a class="dropdown-item" routerLink="/glossary">Glossary</a>
                         <a class="dropdown-item" href="#">Documentation</a>
-                        <a class="dropdown-item" href="#">About</a>
+                        <a class="dropdown-item" routerLink="/support">Support</a>
+                    
                     </div>
                 </li>
 
                 <li ngbDropdown class="nav-item dropdown">
                     <a ngbDropdownToggle class="nav-link dropdown-toggle" id="profileDropdown" role="button" href="#">Profile</a>
                     <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="profileDropdown">
-                        <a class="dropdown-item" href="#">Logout</a>
+                        
+                        <a class="dropdown-item" routerLink="/create-account">Create Account</a>
                         <a class="dropdown-item" routerLink="/login">Login</a>
-                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" routerLink="/settings">Settings</a>
                     </div>
                 </li>
 

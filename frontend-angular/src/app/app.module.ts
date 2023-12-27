@@ -25,6 +25,10 @@ import { NumberDisplayComponent } from './number-display/number-display.componen
 import { NumberStepsComponent } from './number-steps/number-steps.component';
 import { NumberEditComponent } from './number-edit/number-edit.component';
 import { LoginComponent } from './login/login.component';
+import { SettingsComponent } from './settings/settings.component';
+import { SupportComponent } from './support/support.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { GlossaryComponent } from './glossary/glossary.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +43,10 @@ import { LoginComponent } from './login/login.component';
     NumberStepsComponent,
     NumberEditComponent,
     LoginComponent,
+    SettingsComponent,
+    SupportComponent,
+    CreateAccountComponent,
+    GlossaryComponent,
   ],
   imports: [
     BrowserModule,
