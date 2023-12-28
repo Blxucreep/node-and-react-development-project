@@ -29,6 +29,13 @@ import { SettingsComponent } from './settings/settings.component';
 import { SupportComponent } from './support/support.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { GlossaryComponent } from './glossary/glossary.component';
+import { DocumentationComponent } from './documentation/documentation.component';
+import { ExportlessonComponent } from './exportlesson/exportlesson.component';
+import { ImportlessonComponent } from './importlesson/importlesson.component';
+import { ExplorelessonComponent } from './explorelesson/explorelesson.component';
+import { StudynowComponent } from './studynow/studynow.component';
+import { ProgressStatistiqueComponent } from './progress-statistique/progress-statistique.component';
+import { AchievementComponent } from './achievement/achievement.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +54,13 @@ import { GlossaryComponent } from './glossary/glossary.component';
     SupportComponent,
     CreateAccountComponent,
     GlossaryComponent,
+    DocumentationComponent,
+    ExportlessonComponent,
+    ImportlessonComponent,
+    ExplorelessonComponent,
+    StudynowComponent,
+    ProgressStatistiqueComponent,
+    AchievementComponent,
   ],
   imports: [
     BrowserModule,
