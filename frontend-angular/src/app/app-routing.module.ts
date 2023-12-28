@@ -16,6 +16,7 @@ import { ExplorelessonComponent } from './explorelesson/explorelesson.component'
 import { StudynowComponent } from './studynow/studynow.component';
 import { ProgressStatistiqueComponent } from './progress-statistique/progress-statistique.component';
 import { AchievementComponent } from './achievement/achievement.component';
+
 const routes: Routes = [
   { path:'lesson-edit-form', component: LessonEditFormComponent },
   { path:'lesson-list', component: LessonListPageComponent },
