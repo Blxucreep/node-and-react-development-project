@@ -25,6 +25,17 @@ import { NumberDisplayComponent } from './number-display/number-display.componen
 import { NumberStepsComponent } from './number-steps/number-steps.component';
 import { NumberEditComponent } from './number-edit/number-edit.component';
 import { LoginComponent } from './login/login.component';
+import { SettingsComponent } from './settings/settings.component';
+import { SupportComponent } from './support/support.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { GlossaryComponent } from './glossary/glossary.component';
+import { DocumentationComponent } from './documentation/documentation.component';
+import { ExportlessonComponent } from './exportlesson/exportlesson.component';
+import { ImportlessonComponent } from './importlesson/importlesson.component';
+import { ExplorelessonComponent } from './explorelesson/explorelesson.component';
+import { StudynowComponent } from './studynow/studynow.component';
+import { ProgressStatistiqueComponent } from './progress-statistique/progress-statistique.component';
+import { AchievementComponent } from './achievement/achievement.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +50,17 @@ import { LoginComponent } from './login/login.component';
     NumberStepsComponent,
     NumberEditComponent,
     LoginComponent,
+    SettingsComponent,
+    SupportComponent,
+    CreateAccountComponent,
+    GlossaryComponent,
+    DocumentationComponent,
+    ExportlessonComponent,
+    ImportlessonComponent,
+    ExplorelessonComponent,
+    StudynowComponent,
+    ProgressStatistiqueComponent,
+    AchievementComponent,
   ],
   imports: [
     BrowserModule,

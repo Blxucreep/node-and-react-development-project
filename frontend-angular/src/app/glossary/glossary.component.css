@@ -1,0 +1,32 @@
+.glossary-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+  }
+  
+  .glossary-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .glossary-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .glossary-list dt {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .glossary-list dd {
+    margin-bottom: 20px;
+  }
+  
+  .glossary-list p {
+    margin: 0;
+    line-height: 1.5;
+  }

@@ -15,11 +15,8 @@
 
 
 .container.lesson-form-container label:not(.text-danger) {
-    color: #111010; /* Couleur blanche pour le texte */
-    font-weight: normal; /* Assurez-vous que le texte noir n'est pas en gras */
+    color: #111010; 
+    font-weight: normal; 
 }
 
 
-.row mt-2 {
- 
-}

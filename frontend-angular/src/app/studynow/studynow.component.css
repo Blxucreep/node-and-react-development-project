@@ -1,0 +1,48 @@
+.subject-selection {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .subject-selection h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .subject-selection p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  select {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+  }
+  
+  .explore-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .explore-button:hover {
+    background-color: #0056b3;
+  }

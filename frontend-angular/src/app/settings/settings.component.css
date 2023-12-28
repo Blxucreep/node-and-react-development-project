@@ -1,6 +1,6 @@
 /* login.css */
 
-.login-container {
+.settings-container {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -19,12 +19,7 @@
     margin-bottom: 10px;
   }
   
-  input[type="text"],
-  input[type="password"] {
-    padding: 5px;
-    margin-bottom: 10px;
-  }
-  
+ 
   button {
     padding: 10px;
     background-color: #bebebe;
