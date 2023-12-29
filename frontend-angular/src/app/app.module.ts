@@ -16,14 +16,10 @@ import { LessonSearchPageComponent } from './lesson-search-page/lesson-search-pa
 import { MenuNavBarComponent } from './menu-nav-bar/menu-nav-bar.component';
 import { LessonListPageComponent } from './lesson-list-page/lesson-list-page.component';
 import { LessonDetailPageComponent } from './lesson-detail-page/lesson-detail-page.component';
-import { TestPage1Component } from './test-page1/test-page1.component';
 
 import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
-import { NumberDisplayComponent } from './number-display/number-display.component';
-import { NumberStepsComponent } from './number-steps/number-steps.component';
-import { NumberEditComponent } from './number-edit/number-edit.component';
 import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SupportComponent } from './support/support.component';
@@ -34,7 +30,7 @@ import { ExportlessonComponent } from './exportlesson/exportlesson.component';
 import { ImportlessonComponent } from './importlesson/importlesson.component';
 import { ExplorelessonComponent } from './explorelesson/explorelesson.component';
 import { StudynowComponent } from './studynow/studynow.component';
-import { ProgressStatistiqueComponent } from './progress-statistique/progress-statistique.component';
+import { ProgressStatisticsComponent } from './progress-statistics/progress-statistics.component';
 import { AchievementComponent } from './achievement/achievement.component';
 
 @NgModule({
@@ -45,10 +41,6 @@ import { AchievementComponent } from './achievement/achievement.component';
     MenuNavBarComponent,
     LessonListPageComponent,
     LessonDetailPageComponent,
-    TestPage1Component,
-    NumberDisplayComponent,
-    NumberStepsComponent,
-    NumberEditComponent,
     LoginComponent,
     SettingsComponent,
     SupportComponent,
@@ -59,7 +51,7 @@ import { AchievementComponent } from './achievement/achievement.component';
     ImportlessonComponent,
     ExplorelessonComponent,
     StudynowComponent,
-    ProgressStatistiqueComponent,
+    ProgressStatisticsComponent,
     AchievementComponent,
   ],
   imports: [
