@@ -1,80 +1,87 @@
-/* export-lesson.css */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Style the export-lesson section */
+header {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+main {
+  text-align: center;
+  padding: 20px;
+}
+
 .export-lesson {
-    margin-top: 20px;
-  }
-  
-  /* Style the export-lesson banner */
-  .export-lesson-banner {
-    background-color: #bebebe;
-    padding: 10px;
-    text-align: center;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .export-lesson-banner p {
-    margin: 0;
-  }
-  
-  /* Style the export-lesson content */
-  .export-lesson-content {
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .export-lesson-content h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .export-lesson-content p {
-    margin-bottom: 10px;
-  }
-  
-  .export-lesson-content form label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .export-lesson-content form input[type="text"],
-  .export-lesson-content form select {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .export-lesson-content form button[type="submit"] {
-    background-color: #bebebe;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .export-lesson-content form button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Style the file drop area */
-  #file-drop-area {
-    border: 2px dashed #ccc;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  #file-drop-area p {
-    margin: 0;
-  }
-  
-  #file-drop-area.drag-over {
-    background-color: #f7f7f7;
-  }
-  
-  /* ... */
+  margin-top: 20px;
+  text-align: left;
+}
+
+.export-lesson-banner {
+  background-color: #bebebe;
+  padding: 10px;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.export-lesson-banner p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.export-lesson-content {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.export-lesson-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.export-lesson-content p {
+  margin-bottom: 10px;
+}
+
+.export-lesson-content form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.export-lesson-content form input[type="text"],
+.export-lesson-content form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.export-lesson-content form button[type="submit"] {
+  background-color: #bebebe;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.export-lesson-content form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #333;
+  color: #fff;
+}

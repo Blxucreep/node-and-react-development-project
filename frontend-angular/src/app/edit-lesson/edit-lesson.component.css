@@ -1,19 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .lesson-form-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-bottom: 10px;
-    
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
 .text-danger {
-    font-weight: bold; 
-    color: #ff0000; 
+    font-weight: bold;
+    color: #dc3545;
 }
 
+.lesson-form-container label:not(.text-danger) {
+    color: #111010;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
 
-.container.lesson-form-container label:not(.text-danger) {
-    color: #111010; 
-    font-weight: normal; 
+textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.btn-primary {
+    background-color: #bebebe;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.text-danger {
+    clear: both;
+    display: block;
+    margin-top: 5px;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
 }

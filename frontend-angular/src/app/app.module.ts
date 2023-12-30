@@ -17,7 +17,6 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { MenuNavBarComponent } from './menu-nav-bar/menu-nav-bar.component';
 
 import { ImportLessonComponent } from './import-lesson/import-lesson.component';
-
 import { EditLessonComponent } from "./edit-lesson/edit-lesson.component";
 import { ExploreLessonComponent } from './explore-lesson/explore-lesson.component';
 import { ExportLessonComponent } from './export-lesson/export-lesson.component';
@@ -45,7 +44,6 @@ import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
     MenuNavBarComponent,
 
     ImportLessonComponent,
-
     EditLessonComponent,
     ExploreLessonComponent,
     ExportLessonComponent,

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ImportLessonComponent } from './import-lesson/import-lesson.component';
-
 import { EditLessonComponent } from "./edit-lesson/edit-lesson.component";
 import { ExploreLessonComponent } from './explore-lesson/explore-lesson.component';
 import { ExportLessonComponent } from './export-lesson/export-lesson.component';
@@ -25,7 +24,6 @@ import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 
 const routes: Routes = [
   { path: 'import-lesson', component: ImportLessonComponent },
-
   { path: 'edit-lesson', component: EditLessonComponent },
   { path: 'explore-lesson', component: ExploreLessonComponent },
   { path: 'export-lesson', component: ExportLessonComponent },
