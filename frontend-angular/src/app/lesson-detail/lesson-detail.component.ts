@@ -3,11 +3,11 @@ import {Router} from "@angular/router";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-lesson-detail-page',
-  templateUrl: './lesson-detail-page.component.html',
-  styleUrls: ['./lesson-detail-page.component.css']
+  selector: 'app-lesson-detail',
+  templateUrl: './lesson-detail.component.html',
+  styleUrls: ['./lesson-detail.component.css']
 })
-export class LessonDetailPageComponent {
+export class LessonDetailComponent {
   readonly initialId: number;
   id: number | undefined;
 

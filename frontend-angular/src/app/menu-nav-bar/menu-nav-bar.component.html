@@ -9,32 +9,26 @@
                 </li>
 
                 <li ngbDropdown class="nav-item">
-                    <a ngbDropdownToggle class="nav-link dropdown-toggle" id="fileDropdown" role="button" href="#">File</a>
-                    <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="fileDropdown">
-                       
-                       
-                        <a class="dropdown-item" routerLink="/importlesson">Import lessons</a>
-                       
-                        <a class="dropdown-item" href="#">New...</a>
-                        <a class="dropdown-item" routerLink="/explorelesson">Explore lessons</a>
-                        <a class="dropdown-item" routerLink="/lesson-edit-form">Lesson edit form...</a>
-                        <a class="dropdown-item" routerLink="/exportlesson">Export lessons</a>
+                    <a ngbDropdownToggle class="nav-link dropdown-toggle" id="lessonDropdown" role="button" href="#">File</a>
+                    <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="lessonDropdown">
+                        <a class="dropdown-item" routerLink="/import-lesson">Import lesson(s)</a>
+                        <a class="dropdown-item" routerLink="/create-lesson">Create lesson</a>
+                        <a class="dropdown-item" routerLink="/edit-lesson">Edit lesson</a>
+                        <a class="dropdown-item" routerLink="/explore-lesson">Explore lessons</a>
+                        <a class="dropdown-item" routerLink="/export-lesson">Export lesson(s)</a>
                     </div>
                 </li>
   
                 <li class="nav-item">
-                    
-                    <a class="nav-link" routerLink="/studynow">Study Now</a>
+                    <a class="nav-link" routerLink="/study-now">Study Now</a>
                 </li>
   
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/progress-statistics">Progress Statistics</a>
-                    
                 </li>
   
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/achievement">Achievements</a>
-                    
+                    <a class="nav-link" routerLink="/achievements">Achievements</a>
                 </li>
   
                 <li ngbDropdown class="nav-item dropdown">
@@ -43,14 +37,12 @@
                         <a class="dropdown-item" routerLink="/glossary">Glossary</a>
                         <a class="dropdown-item" routerLink="/documentation">Documentation</a>
                         <a class="dropdown-item" routerLink="/support">Support</a>
-                    
                     </div>
                 </li>
 
                 <li ngbDropdown class="nav-item dropdown">
                     <a ngbDropdownToggle class="nav-link dropdown-toggle" id="profileDropdown" role="button" href="#">Profile</a>
                     <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="profileDropdown">
-                        
                         <a class="dropdown-item" routerLink="/create-account">Create Account</a>
                         <a class="dropdown-item" routerLink="/login">Login</a>
                         <a class="dropdown-item" routerLink="/settings">Settings</a>

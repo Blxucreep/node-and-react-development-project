@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'td_angular';
+  title = 'project-angular';
   values: string = '';
 
   constructor(private router: Router) {

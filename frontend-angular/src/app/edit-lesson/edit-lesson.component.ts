@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-lesson-edit-form',
-  templateUrl: './lesson-edit-form.component.html',
-  styleUrls: ['./lesson-edit-form.component.css']
+  selector: 'app-edit-lesson',
+  templateUrl: './edit-lesson.component.html',
+  styleUrls: ['./edit-lesson.component.css']
 })
-export class LessonEditFormComponent {
+export class EditLessonComponent {
   lessonForm: FormGroup;
 
   constructor(formBuilder: FormBuilder) {

@@ -1,15 +1,13 @@
-/* Styles pour la page d'accueil */
 .welcome-page {
-    color: #0e0e0e; /* Couleur du texte */
+    color: #0e0e0e;
     text-align: center;
-    padding: 100px; /* Ajustez la marge intérieure selon vos besoins */
-    margin: 0; /* Assurez-vous qu'il n'y a pas de marges */
+    padding: 100px;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Alignez le contenu en haut de la page */
+    justify-content: flex-start;
     align-items: center;
 }
-
 
 .welcome-page::before {
     content: "";
@@ -25,15 +23,13 @@
     z-index: -1;
 }
 
-/* Style pour le titre h1 */
 .welcome-page h1 {
-    font-size: 3em; /* Taille de la police du titre */
-    margin-bottom: 20px; /* Ajustez la marge inférieure selon vos besoins */
-    font-weight: bold; /* Rend le texte plus gras */
-    margin-top: 0; /* Ajustez la marge supérieure pour placer le titre tout en haut */
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-top: 0;
 }
 
-/* Style pour le sous-titre ou la description */
 .welcome-page p {
     font-size: 1.5em;
     margin-bottom: 40px;
