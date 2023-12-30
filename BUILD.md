@@ -10,7 +10,7 @@ Because of some errors, the following command should be run:
 
 To install the dependencies, run the following command:
 - `npm install -s express`
-- `npm install sequelize sequelize-typescript pg pg-hstore`
+- `npm install sequelize sequelize-typescript pg pg-hstore cors`
 
 Then, create a new role in PostgreSQL. Go to pgAdmin 4 and create a new role named `LearningUser` with the password `root` and all privileges (see below):
 ![LearningUser role]('captures/role.png')
@@ -27,6 +27,9 @@ To run the server, run the following command:
 
 
 ## Angular: frontend
+
+Globally, @angular-cli should be installed:
+- `npm install -g @angular/cli`
 
 To install the dependencies, run the following command:
 - 

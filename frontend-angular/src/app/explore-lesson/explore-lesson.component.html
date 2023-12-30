@@ -20,16 +20,10 @@
         <p>Below are the lessons available for exploration:</p>
         
         <div class="lesson-list">
-          <div class="lesson-item" *ngFor="let lesson of lessons">
-            <h3>{{ lesson.title }}</h3>
-            <p>{{ lesson.description }}</p>
-            <a [href]="'/lesson/' + lesson.id">Explore Lesson</a>
-          </div>
-
-          <div class="lesson-item">
-            <h3>Lesson 2: CSS Styling</h3>
-            <p>This lesson focuses on CSS styling techniques.</p>
-            <a href="lesson2.html">Explore Lesson</a>
+          <div class="lesson-item" *ngFor="let package of packages">
+            <h3>{{ package.title }}</h3>
+            <p>{{ package.description }}</p>
+            <a [href]="'/lesson/' + package.id">Explore Lesson</a>
           </div>
         </div>
       </div>

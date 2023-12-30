@@ -1,11 +1,14 @@
 import express from 'express';
-import { Sequelize, Model, DataTypes } from 'sequelize';
+import cors from 'cors';
+import { Sequelize, DataTypes } from 'sequelize';
 
 import setupLearningPackageModel from './models/learningpackage';
 import setupLearningFactModel from './models/learningfact';
 import setupUser from './models/user';
 
 const app = express();
+app.use(cors());
+
 const port = 3000;
 
 const sequelize = new Sequelize({

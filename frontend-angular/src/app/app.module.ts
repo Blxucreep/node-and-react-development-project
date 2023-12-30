@@ -82,7 +82,6 @@ import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-
 export class AppModule { 
   constructor(faIconLibrary: FaIconLibrary) {
     faIconLibrary.addIconPacks(fas, far);

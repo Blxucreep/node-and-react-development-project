@@ -1,6 +1,6 @@
-// explore-lesson.component.ts
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { DatabaseService } from '../database.service';
+import { Data } from '@angular/router';
 
 @Component({
   selector: 'app-explore-lesson',
@@ -8,21 +8,21 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./explore-lesson.component.css']
 })
 export class ExploreLessonComponent implements OnInit {
-  lessons: any[] = [];
+  packages: any[] = [];
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private databaseService: DatabaseService) {}
 
   ngOnInit() {
-    this.fetchLessons();
+    this.fetchPackages();
   }
 
-  fetchLessons() {
-    this.httpClient.get<any[]>('localhost:3000/api/package').subscribe(
+  fetchPackages() {
+    this.databaseService.getPackages().subscribe(
       (response) => {
-        this.lessons = response;
+        this.packages = response;
       },
       (error) => {
-        console.error('Error fetching lessons:', error);
+        console.error('Error fetching packages:', error);
       }
     );
   }

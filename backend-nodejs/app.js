@@ -13,11 +13,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
 const sequelize_1 = require("sequelize");
 const learningpackage_1 = __importDefault(require("./models/learningpackage"));
 const learningfact_1 = __importDefault(require("./models/learningfact"));
 const user_1 = __importDefault(require("./models/user"));
 const app = (0, express_1.default)();
+app.use((0, cors_1.default)());
 const port = 3000;
 const sequelize = new sequelize_1.Sequelize({
     dialect: 'postgres',
