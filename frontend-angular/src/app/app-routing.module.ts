@@ -41,6 +41,7 @@ const routes: Routes = [
   { path: 'create-account', component: CreateAccountComponent },
   { path: 'login', component: LoginComponent },
   { path: 'settings', component: SettingsComponent },
+  { path: 'lesson-detail', component: LessonDetailComponent },
 ];
 
 @NgModule({
