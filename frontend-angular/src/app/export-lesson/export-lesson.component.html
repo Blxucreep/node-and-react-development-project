@@ -1,43 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h2>Export Lesson</h2>
 
-</head>
-<body>
-  <header>
-    <h1>Anki Export Lesson</h1>
-  </header>
+<form (ngSubmit)="exportLesson()">
+  <label for="lesson-select">Select Lesson:</label>
+  <select id="lesson-select" name="lesson-select" [(ngModel)]="selectedLesson" required>
+    <option value="" disabled>Select a lesson</option>
+    <option *ngFor="let lesson of lessons" [ngValue]="lesson">{{ lesson.title }}</option>
+  </select>
 
-  <main>
-    <section class="export-lesson">
-      <div class="export-lesson-banner">
-        <p>Export Lesson</p>
-      </div>
-      
-      <div class="export-lesson-content">
-        <h2>Lesson Export Options</h2>
-        <p>Select the options for exporting your lesson:</p>
-        
-        <form action="export.php" method="post">
-          <label for="lesson-title">Lesson Title:</label>
-          <input type="text" id="lesson-title" name="lesson-title" required>
-          
-          <label for="file-format">File Format:</label>
-          <select id="file-format" name="file-format" required>
-            <option value="pdf">PDF</option>
-            <option value="docx">Word Document (DOCX)</option>
-            <option value="txt">Plain Text (TXT)</option>
-          </select>
-          
-          <button type="submit">Export Lesson</button>
-        </form>
-      </div>
-    </section>
-  </main>
+  <label for="file-format">File Format:</label>
+  <select id="file-format" name="file-format" [(ngModel)]="selectedFormat" required>
+    <option value="" disabled>Select a format</option>
+    <option value="pdf">PDF</option>
+    <option value="docx">Word Document (DOCX)</option>
+    <option value="txt">Plain Text (TXT)</option>
+  </select>
 
-  <footer>
-    <p>&copy; 2023 Anki. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+  <button type="submit">Export Lesson</button>
+</form>
+
+<div *ngIf="exportedLessonContent">
+  <h3>Exported Lesson:</h3>
+  <pre>{{ exportedLessonContent }}</pre>
+  <a [href]="exportedLessonDownloadLink" [download]="exportedLessonFileName">Download</a>
+</div>
