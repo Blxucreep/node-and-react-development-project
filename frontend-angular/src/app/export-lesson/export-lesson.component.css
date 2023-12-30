@@ -17,65 +17,85 @@ main {
   padding: 20px;
 }
 
-.export-lesson {
+.explore-lesson {
   margin-top: 20px;
   text-align: left;
 }
 
-.export-lesson-banner {
+.explore-lesson-banner {
   background-color: #bebebe;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   color: #333;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.export-lesson-banner p {
+.explore-lesson-banner p {
   margin: 0;
   font-size: 20px;
 }
 
-.export-lesson-content {
-  padding: 20px;
+.explore-lesson-content {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
-  text-align: left;
+  padding: 20px;
 }
 
-.export-lesson-content h2 {
+.explore-lesson-content h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-.export-lesson-content p {
-  margin-bottom: 10px;
+form {
+  margin-bottom: 30px;
 }
 
-.export-lesson-content form label {
+label {
   display: block;
+  font-weight: bold;
   margin-bottom: 5px;
 }
 
-.export-lesson-content form input[type="text"],
-.export-lesson-content form select {
+select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
+  margin-bottom: 15px;
 }
 
-.export-lesson-content form button[type="submit"] {
+button[type="submit"] {
   background-color: #bebebe;
   color: #fff;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.export-lesson-content form button[type="submit"]:hover {
+button[type="submit"]:hover {
+  background-color: #bebebe;
+}
+
+pre {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+a {
+  display: inline-block;
+  background-color: #bebebe;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+a:hover {
   background-color: #0056b3;
 }
 
