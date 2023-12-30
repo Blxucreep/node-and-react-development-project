@@ -26,4 +26,8 @@ export class ExploreLessonComponent implements OnInit {
       }
     );
   }
+
+  exploreLesson(lessonId: number) {
+    this.router.navigate(['/lesson-detail', lessonId]);
+  }
 }

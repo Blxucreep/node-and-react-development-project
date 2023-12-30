@@ -1,27 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http'; // Importer le module HttpClient
 
 @Component({
   selector: 'app-lesson-detail',
   templateUrl: './lesson-detail.component.html',
   styleUrls: ['./lesson-detail.component.css']
 })
-export class LessonDetailComponent {
-  readonly initialId: number;
-  id: number | undefined;
+export class LessonDetailComponent implements OnInit {
+  lesson: any;
 
-  constructor(activatedRoute: ActivatedRoute, private router: Router) {
-    this.initialId = +activatedRoute.snapshot.params['id'];
-    console.log('initialId:', this.initialId);
-    activatedRoute.params.subscribe(currParams => {
-      this.id = +currParams['id'];
-      console.log('id:', this.id);
+  constructor(private route: ActivatedRoute, private httpClient: HttpClient) {}
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      const lessonId = +params['id']; // Convertir l'ID en nombre
+
+      if (!isNaN(lessonId)) {
+        this.httpClient.get<any>(`localhost:3000/api/package/${lessonId}`).subscribe(
+          (lesson) => {
+            this.lesson = lesson;
+          },
+          (error) => {
+            console.error('Error fetching lesson details:', error);
+          }
+        );
+      } else {
+        console.error('Invalid lesson ID');
+      }
     });
   }
-
-  onClickGoNextPage(){
-    const nextId = (this.id)? this.id + 1 : 1;
-    this.router.navigate(['/lesson', nextId]);
-   }   
 }
