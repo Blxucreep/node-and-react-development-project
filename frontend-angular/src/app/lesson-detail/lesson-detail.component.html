@@ -1,9 +1,51 @@
-initialId: {{initialId}}
+<!-- lesson-detail.component.html -->
 
-<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson Detail</title>
+</head>
+<body>
+  <header>
+    <h1>Anki Lesson Detail</h1>
+  </header>
 
-id: {{id}}
+  <main>
+    <section class="lesson-detail">
+      <div class="lesson-detail-banner">
+        <p>Lesson Detail</p>
+      </div>
 
-<br>
+      <div class="lesson-detail-content">
+        <h2>Lesson Information</h2>
+        
+        <div class="lesson-info">
+          <label for="lesson-title">Title:</label>
+          <p>{{ lesson.title }}</p>
+          
+          <label for="lesson-description">Description:</label>
+          <p>{{ lesson.description }}</p>
 
-<button type="button" class="btn btn-outline-primary"(click)="onClickGoNextPage()">Next</button>
+          <!-- Ajoutez d'autres champs en fonction de votre modèle de données -->
+          <label for="lesson-level">Level:</label>
+          <p>{{ lesson.level }}</p>
+
+          <label for="lesson-category">Category:</label>
+          <p>{{ lesson.category }}</p>
+
+          <label for="lesson-prerequisite">Prerequisite:</label>
+          <p>{{ lesson.prerequisite }}</p>
+
+          <!-- Ajoutez d'autres champs si nécessaire -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Anki. All rights reserved.</p>
+  </footer>
+</body>
+</html>
