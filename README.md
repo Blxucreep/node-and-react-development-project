@@ -1,29 +1,42 @@
-# node-and-react-development-project
+# Node and React Development Project
 
-Here we'll bedisplaying some screenshots of our app, so you can easily understand the goal of each page you'll be able to navigate to.
-Let's start by the home page, that is very simple and indicates the purpose of the project.
-![Home]('captures/home.png')
-You may want to import a new lesson to the website, you will achieve it on this page :
-![Import]('captures/import.png')
+Welcome to the Node and React Development Project! In this documentation, we'll showcase various screenshots of our app to help you understand the purpose of each page.
 
-Once you'll have uploaded a couple of lessons you will be able to review them quickly with the explore page.
-![Explore]('captures/explore.png')
+## Home Page
+The home page is simple, providing an overview of the project's goals.
+![Home](captures/home.png)
 
-You may also want to upload a lesson to keep it stored on your computer. Our app allows multiple download formats such as PDF, docx or txt.
-![Export]('captures/export.png')
+## Import Lessons
+Easily import new lessons to the website on this page.
+![Import](captures/import.png)
 
-Here's the central part of the website : here you can access to each lessons content, with little cards giving you all the content you need to master the subject of the lesson.
-![studynow]('captures/study-now.png')
+## Explore Lessons
+Quickly review and explore the lessons you've uploaded.
+![Explore](captures/explore.png)
 
-It's now time for some statistics. You may want to take a look at how many time you spent reading your lessons.
-![Statistics]('captures/statistics.png')
+## Export Lessons
+Upload and store lessons on your computer in different formats such as PDF, docx, or txt.
+![Export](captures/export.png)
 
-Naturally, there's a 'Help' section that will help you navigate throughout the app without getting lost.
-The glossary part will explain briefly each term that you are likely to encounter while reading the lessons.
-![Glossary]('captures/glossary.png')
+## Study Now
+Access the core of the website, where you can delve into the content of each lesson through informative cards.
+![Study Now](captures/study-now.png)
 
-The documentation is here to help you if you're lost in the different pages. It explains the basics about how to manipulate the app.
-![Documentation]('captures/documentation.png')
+## Statistics
+Check how much time you've spent reading your lessons.
+![Statistics](captures/statistics.png)
 
-Finally, you may have some other questions that we didn't already answer. You can ask us on the contact page.
-![Support]('captures/support.png')
+## Help Section
+Navigate the app seamlessly with the help section, providing guidance on each page.
+
+## Glossary
+Learn about key terms you may encounter while reading lessons.
+![Glossary](captures/glossary.png)
+
+## Documentation
+Refer to the documentation for basic instructions on how to navigate and use the app.
+![Documentation](captures/documentation.png)
+
+## Contact Us
+Have additional questions? Reach out to us on the contact page.
+![Support](captures/support.png)
