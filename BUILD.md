@@ -1,4 +1,4 @@
-# node-and-react-development-project
+# Node and React Development Project
 
 ## Node.js: backend
 
@@ -6,6 +6,9 @@ Globally, typescript should be installed:
 - `npm install -g typescript`
 
 To install the dependencies, run the following command:
+- `npm install --force`
+
+If any trouble, here all the commands we used to install the dependencies:
 - `npm install cors`
 - `npm install -s express`
 - `npm install sequelize sequelize-typescript pg pg-hstore`
@@ -33,10 +36,9 @@ Globally, @angular-cli should be installed:
 - `npm install -g @angular/cli`
 
 To install the dependencies, run the following command:
+- `npm install --force`
+
+If any trouble, here all the commands we used to install the dependencies:
+- `ng add @fortawesome/angular-fontawesome`
+- `ng add @ng-bootstrap/ng-bootstrap`
 - `npm install chart.js primeng --force`
-
-
-
-- 
-- `npm install primeng --force`
-- `npm install @angular/router @angular/animations --force`
