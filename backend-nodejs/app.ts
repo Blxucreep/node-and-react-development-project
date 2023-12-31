@@ -221,3 +221,14 @@ app.get('/api/userlearningfact', async (req, res) => {
         res.status(500).json({ error: 'Internal error'});
     }
 });
+
+// GET "api/userlearningpackage"
+app.get('/api/userlearningpackage', async (req, res) => {
+    try {
+        const userLearningPackages = await UserLearningPackage.findAll();
+        res.json(userLearningPackages);
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error'});
+    }
+});

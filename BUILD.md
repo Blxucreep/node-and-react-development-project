@@ -8,7 +8,8 @@ Globally, typescript should be installed:
 Because of some errors, the following command should be run:
 - `npm i --save-dev @types/express`
 
-To install the dependencies, run the following command:
+To add/install the dependencies, run the following command:
+- `ng add ng2-charts`
 - `npm install -s express`
 - `npm install sequelize sequelize-typescript pg pg-hstore cors`
 
