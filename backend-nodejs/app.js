@@ -73,12 +73,19 @@ app.get('/api/package/:id', (req, res) => __awaiter(void 0, void 0, void 0, func
         res.status(500).json({ error: 'Internal error' });
     }
 }));
-// POST "/api/package/:id"
-app.post('/api/package', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+// PUT "/api/package/:id"
+app.put('/api/package/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { title, description, category, level, prerequisite, tags, license } = req.body;
-        const newPackage = yield LearningPackage.create({ title, description, category, level, prerequisite, tags, license });
-        res.json(newPackage);
+        const { id } = req.params;
+        const packageFound = yield LearningPackage.findByPk(id);
+        if (packageFound) {
+            const { title, description, category, level, prerequisite, tags, license } = req.body;
+            yield packageFound.update({ title, description, category, level, prerequisite, tags, license });
+            res.json(packageFound);
+        }
+        else {
+            res.status(404).json({ error: 'Package not found' });
+        }
     }
     catch (error) {
         console.error('Error:', error);
@@ -120,6 +127,25 @@ app.get('/api/fact/:id', (req, res) => __awaiter(void 0, void 0, void 0, functio
         const { id } = req.params;
         const factFound = yield LearningFact.findByPk(id);
         if (factFound) {
+            res.json(factFound);
+        }
+        else {
+            res.status(404).json({ error: 'Fact not found' });
+        }
+    }
+    catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+}));
+// PUT "/api/fact/:id"
+app.put('/api/fact/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id } = req.params;
+        const factFound = yield LearningFact.findByPk(id);
+        if (factFound) {
+            const { title, fact } = req.body;
+            yield factFound.update({ title, fact });
             res.json(factFound);
         }
         else {

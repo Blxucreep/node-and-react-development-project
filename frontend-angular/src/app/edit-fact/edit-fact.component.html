@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fact Edit Form</title>
+</head>
+<body>
+    <h1>Edit Fact</h1>
+    <p>Use this form to edit the details of the fact.</p>
+    <div class="container fact-form-container" [formGroup]="factForm">
+        <div class="row mt-2">
+            <label class="col-md-2" for="title" [class]="factForm.get('title')?.invalid ? 'text-danger' : ''">Title</label>
+            <input id="title" type="text" class="col-md-10" placeholder="Enter title" formControlName="title" [(ngModel)]="fact.title">
+        </div>
+        <div class="row mt-2">
+            <label class="col-md-2" for="fact" [class]="factForm.get('fact')?.invalid ? 'text-danger' : ''">Fact</label>
+            <input id="fact" type="text" class="col-md-10" placeholder="Enter fact" formControlName="fact" [(ngModel)]="fact.fact">
+        </div>
+
+        <br>
+
+        <div class="row mt-2">
+            <button type="button" class="btn btn-primary" (click)="onClickSubmit()" [disabled]="!factForm.valid">Submit</button>
+                <span *ngIf="factForm.invalid" class="text-danger text-submit">
+                    Please fill out all required fields.
+                </span>  
+        </div>
+    </div>
+</body>
+</html>

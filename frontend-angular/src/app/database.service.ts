@@ -22,9 +22,27 @@ export class DatabaseService {
     return this.httpClient.get<any>(url);
   }
 
+  // PUT "/api/package/:id"
+  public updatePackageById(id: string, data: any): Observable<any> {
+    const url = `${this.apiUrl}/api/package/${id}`;
+    return this.httpClient.put<any>(url, data);
+  }
+
   // GET "/api/package/:id/fact"
   public getFactsByPackageId(id: string): Observable<any[]> {
     const url = `${this.apiUrl}/api/package/${id}/fact`;
     return this.httpClient.get<any[]>(url);
+  }
+
+  // GET "/api/fact/:id"
+  public getFactById(id: string): Observable<any> {
+    const url = `${this.apiUrl}/api/fact/${id}`;
+    return this.httpClient.get<any>(url);
+  }
+
+  // PUT "/api/fact/:id"
+  public updateFactById(id: string, data: any): Observable<any> {
+    const url = `${this.apiUrl}/api/fact/${id}`;
+    return this.httpClient.put<any>(url, data);
   }
 }

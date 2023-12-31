@@ -69,12 +69,18 @@ app.get('/api/package/:id', async (req, res) => {
     }
 });
 
-// POST "/api/package/:id"
-app.post('/api/package', async (req, res) => {
+// PUT "/api/package/:id"
+app.put('/api/package/:id', async (req, res) => {
     try {
-        const { title, description, category, level, prerequisite, tags, license } = req.body;
-        const newPackage = await LearningPackage.create({ title, description, category, level, prerequisite, tags, license });
-        res.json(newPackage);
+        const { id } = req.params;
+        const packageFound = await LearningPackage.findByPk(id);
+        if (packageFound) {
+            const { title, description, category, level, prerequisite, tags, license } = req.body;
+            await packageFound.update({ title, description, category, level, prerequisite, tags, license });
+            res.json(packageFound);
+        } else {
+            res.status(404).json({ error: 'Package not found' });
+        }
     } catch (error) {
         console.error('Error:', error);
         res.status(500).json({ error: 'Internal error' });
@@ -115,6 +121,24 @@ app.get('/api/fact/:id', async (req, res) => {
         const { id } = req.params;
         const factFound = await LearningFact.findByPk(id);
         if (factFound) {
+            res.json(factFound);
+        } else {
+            res.status(404).json({ error: 'Fact not found' });
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+});
+
+// PUT "/api/fact/:id"
+app.put('/api/fact/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const factFound = await LearningFact.findByPk(id);
+        if (factFound) {
+            const { title, fact } = req.body;
+            await factFound.update({ title, fact });
             res.json(factFound);
         } else {
             res.status(404).json({ error: 'Fact not found' });

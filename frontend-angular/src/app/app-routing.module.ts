@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ImportLessonComponent } from './import-lesson/import-lesson.component';
-import { EditLessonComponent } from "./edit-lesson/edit-lesson.component";
 import { ExploreLessonComponent } from './explore-lesson/explore-lesson.component';
 import { ExportLessonComponent } from './export-lesson/export-lesson.component';
 
@@ -21,11 +20,11 @@ import { LoginComponent } from "./login/login.component";
 import { SettingsComponent } from "./settings/settings.component";
 
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
+import { EditLessonComponent } from "./edit-lesson/edit-lesson.component";
+import { EditFactComponent } from './edit-fact/edit-fact.component';
 
 const routes: Routes = [
   { path: 'import-lesson', component: ImportLessonComponent },
-  { path: 'edit-lesson/:id', component: EditLessonComponent },
-  { path: 'edit-lesson', component: EditLessonComponent },
   { path: 'explore-lesson', component: ExploreLessonComponent },
   { path: 'export-lesson', component: ExportLessonComponent },
 
@@ -43,8 +42,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'settings', component: SettingsComponent },
 
-  { path: 'lesson-detail', component: LessonDetailComponent },
   { path: 'lesson-detail/:id', component: LessonDetailComponent },
+  { path: 'edit-lesson/:id', component: EditLessonComponent },
+  { path: 'edit-fact/:id', component: EditFactComponent },
 ];
 
 @NgModule({

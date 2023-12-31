@@ -18,7 +18,6 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { MenuNavBarComponent } from './menu-nav-bar/menu-nav-bar.component';
 
 import { ImportLessonComponent } from './import-lesson/import-lesson.component';
-import { EditLessonComponent } from "./edit-lesson/edit-lesson.component";
 import { ExploreLessonComponent } from './explore-lesson/explore-lesson.component';
 import { ExportLessonComponent } from './export-lesson/export-lesson.component';
 
@@ -37,6 +36,8 @@ import { LoginComponent } from "./login/login.component";
 import { SettingsComponent } from "./settings/settings.component";
 
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
+import { EditLessonComponent } from "./edit-lesson/edit-lesson.component";
+import { EditFactComponent } from './edit-fact/edit-fact.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,6 @@ import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
     MenuNavBarComponent,
 
     ImportLessonComponent,
-    EditLessonComponent,
     ExploreLessonComponent,
     ExportLessonComponent,
 
@@ -64,6 +64,8 @@ import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
     SettingsComponent,
 
     LessonDetailComponent,
+    EditLessonComponent,
+    EditFactComponent,
   ],
   imports: [
     BrowserModule,
