@@ -44,7 +44,7 @@
           <br>
         </div>
 
-        <a routerLink="/edit-lesson/{{ package.package_id }}">Edit Lesson</a>
+        <a routerLink="/lesson-detail/{{ package.package_id }}/edit-lesson">Edit Lesson</a>
       </div>
 
       <br>
@@ -59,13 +59,13 @@
             <label for="fact-fact">Description:</label>
             <p>{{ fact.fact }}</p>
 
-            <a routerLink="/edit-fact/{{ fact.fact_id }}">Edit Fact</a>
-            <a routerLink="/delete-fact/{{ fact.fact_id }}">Delete Fact</a>
+            <a routerLink="/lesson-detail/{{ package.package_id }}/edit-fact/{{ fact.fact_id }}">Edit Fact</a>
+            <a routerLink="/lesson-detail/{{ package.package_id }}/delete-fact/{{ fact.fact_id }}">Delete Fact</a>
 
             <br>
         </div>
 
-        <a routerLink="/add-fact/{{ package.package_id }}">Add Fact</a>
+        <a routerLink="/lesson-detail/{{ package.package_id }}/add-fact">Add Fact</a>
       </div>
     </section>
   </main>

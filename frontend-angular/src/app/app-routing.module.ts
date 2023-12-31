@@ -35,9 +35,9 @@ const routes: Routes = [
   { path: 'support', component: SupportComponent },
 
   { path: 'lesson-detail/:id', component: LessonDetailComponent },
-  { path: 'edit-lesson/:id', component: EditLessonComponent },
-  { path: 'edit-fact/:id', component: EditFactComponent },
-  { path: 'add-fact/:id', component: EditFactComponent },
+  { path: 'lesson-detail/:id/edit-lesson', component: EditLessonComponent },
+  { path: 'lesson-detail/:id/edit-fact/:factId', component: EditFactComponent },
+  { path: 'lesson-detail/:id/add-fact', component: EditFactComponent },
 ];
 
 @NgModule({

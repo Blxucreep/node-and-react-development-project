@@ -15,7 +15,11 @@
         </div>
         <div class="row mt-2">
             <label class="col-md-2" for="fact" [class]="factForm.get('fact')?.invalid ? 'text-danger' : ''">Fact</label>
-            <input id="fact" type="text" class="col-md-10" placeholder="Enter fact" formControlName="fact" [(ngModel)]="fact.fact">
+            <input id="fact" type="text" class="col-md-10" placeholder="Enter fact" formControlName="fact" [(ngModel)]="fact.fact" maxlength="255">
+        </div>
+        <div class="row mt-2">
+            <label class="col-md-2" for="package_id">Package ID</label>
+            <input id="package_id" type="text" class="col-md-10" formControlName="package_id" [(ngModel)]="fact.package_id" readonly>
         </div>
 
         <br>

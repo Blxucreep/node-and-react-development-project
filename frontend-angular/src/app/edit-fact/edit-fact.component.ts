@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { DatabaseService } from '../database.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -11,6 +11,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class EditFactComponent {
   fact: any = {};
   factForm: FormGroup;
+  editMode = false;
+  packageId: string;
 
   constructor(formBuilder: FormBuilder,
               private databaseService: DatabaseService,
@@ -18,14 +20,28 @@ export class EditFactComponent {
               private router: Router) {
     this.factForm = formBuilder.group({
       title: ['', Validators.required],
-      fact: ['', Validators.required]
+      fact: ['', Validators.required],
+      package_id: [''],
     });
+
+    this.packageId = '';
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      const factId = params['id'];
-      this.fetchFactById(factId);
+      const factId = params['factId'];
+      this.packageId = params['id'];
+      // see in the url if we are in edit mode or add mode
+      if (factId !== undefined) {
+        // we are in edit mode
+        this.editMode = true;
+        // fetch the fact from the database
+        this.fetchFactById(factId);
+      }
+      else {
+        // we are in add mode
+        this.editMode = false;
+      }
     });
   }
 
@@ -43,17 +59,37 @@ export class EditFactComponent {
   onClickSubmit() {
     if (this.factForm.valid) {
       const formData = this.factForm.value;
-      this.databaseService.updateFactById(this.fact.fact_id, formData).subscribe(
-        (response) => {
-          console.log('Fact updated:', response);
+      
+      // add the package_id to the form data
+      formData.package_id = this.packageId;
 
-          // redirect to the lesson-detail page
-          this.router.navigate([`/lesson-detail/${this.fact.package_id}`]);
-        },
-        (error) => {
-          console.error('Error updating fact:', error);
-        }
-      );
+      if (!this.editMode) {
+        // create a new fact
+        this.databaseService.createFact(formData).subscribe(
+          (response) => {
+            console.log('Fact created:', response);
+
+            // redirect to the lesson-detail page
+            this.router.navigate([`/lesson-detail/${this.packageId}`]);
+          },
+          (error) => {
+            console.error('Error creating fact:', error);
+          }
+        );
+      }
+      else {
+        this.databaseService.updateFactById(this.fact.fact_id, formData).subscribe(
+          (response) => {
+            console.log('Fact updated:', response);
+  
+            // redirect to the lesson-detail page
+            this.router.navigate([`/lesson-detail/${this.packageId}`]);
+          },
+          (error) => {
+            console.error('Error updating fact:', error);
+          }
+        );
+      }
     }
   }
 }
