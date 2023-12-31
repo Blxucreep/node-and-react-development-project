@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Ajoutez votre style CSS personnalisé ici */
+
+    .timer {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Anki Study Now</h1>
+</header>
+
+<main>
+  <section class="study-now">
+    <div class="study-now-banner">
+      <p>View Lesson</p>
+    </div>
+
+    <div class="study-now-content">
+      <h2>Browse Available Lessons</h2>
+      <p>Below are the lessons available for exploration:</p>
+
+      <div class="lesson-list">
+        <div class="lesson-item" *ngFor="let package of packages">
+          <h3>{{ package.title }}</h3>
+          <p>{{ package.description }}</p>
+          <a (click)="startTimer()">Study Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2023 Anki. All rights reserved.</p>
+</footer>
+
+<script>
+  function startTimer() {
+    let timerValue = 0;
+    const timerElement = document.querySelector('.timer');
+
+    const intervalId = setInterval(() => {
+      timerValue++;
+      timerElement.textContent = timerValue.toString();
+    }, 1000);
+  }
+</script>
+</body>
+</html>
