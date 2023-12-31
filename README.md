@@ -32,7 +32,7 @@ Upload and store lessons on your computer in different formats such as pdf, docx
 
 ## Study Now
 Access the core of the website, where you can delve into the content of each lesson through informative cards. You can search for a specific lesson (package) and return one by one the flashcards that compose it. Each card can be marked as reviewed. When you are done, you can click on the finish button and your learning minutes on this lesson will be saved in the database.
-![Study Now](captures/study-now.png)
+![Study Now](captures/studynow.png)
 
 ## Progress Statistics
 Check how many cards you'v reviewed and how much time you've spent reading your lessons.
