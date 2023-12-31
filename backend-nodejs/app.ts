@@ -232,3 +232,46 @@ app.get('/api/userlearningpackage', async (req, res) => {
         res.status(500).json({ error: 'Internal error'});
     }
 });
+
+app.get('/api/courses/titles', async (req, res) => {
+    try {
+      const courses = await LearningPackage.findAll({
+        attributes: ['package_id', 'title'] // Sélectionnez uniquement l'ID et le titre
+      });
+      res.json(courses);
+    } catch (error) {
+      console.error('Error:', error);
+      res.status(500).json({ error: 'Internal error' });
+    }
+  });
+  
+  // Route pour récupérer les questions (et réponses) pour un cours donné
+  app.get('/api/package/:package_id/details', async (req, res) => {
+    try {
+      const { package_id } = req.params;
+      const packageDetails = await LearningPackage.findByPk(package_id, {
+        include: [{
+          model: LearningFact,
+          as: 'facts' // Assurez-vous que l'association utilise cet alias
+        }]
+      });
+  
+      if (packageDetails) {
+        // Structurez la réponse si nécessaire, par exemple:
+        const response = {
+          title: packageDetails.title,
+          facts: packageDetails.facts.map(fact => ({
+            question: fact.title,
+            answer: fact.fact
+          }))
+        };
+  
+        res.json(response);
+      } else {
+        res.status(404).json({ error: 'Package not found' });
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      res.status(500).json({ error: 'Internal error' });
+    }
+  });
