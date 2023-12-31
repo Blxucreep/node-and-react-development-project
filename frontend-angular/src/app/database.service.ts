@@ -69,4 +69,16 @@ export class DatabaseService {
     const url = `${this.apiUrl}/api/userlearningpackage`;
     return this.httpClient.get<any[]>(url);
   }
+
+    // GET "/api/courses/titles"
+  public getCourseTitles(): Observable<any[]> {
+    const url = `${this.apiUrl}/api/courses/titles`;
+    return this.httpClient.get<any[]>(url);
+  }
+
+  // GET "/api/package/:package_id/details"
+  public getPackageDetailsById(packageId: string): Observable<any> {
+    const url = `${this.apiUrl}/api/package/${packageId}/details`;
+    return this.httpClient.get<any>(url);
+  }
 }
