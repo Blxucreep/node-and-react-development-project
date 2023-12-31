@@ -45,4 +45,16 @@ export class DatabaseService {
     const url = `${this.apiUrl}/api/fact/${id}`;
     return this.httpClient.put<any>(url, data);
   }
+
+  // POST "/api/fact"
+  public createFact(data: any): Observable<any> {
+    const url = `${this.apiUrl}/api/fact`;
+    return this.httpClient.post<any>(url, data);
+  }
+
+  // DELETE "/api/fact/:id"
+  public deleteFactById(id: string): Observable<any> {
+    const url = `${this.apiUrl}/api/fact/${id}`;
+    return this.httpClient.delete<any>(url);
+  }
 }

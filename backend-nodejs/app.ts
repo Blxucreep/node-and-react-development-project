@@ -149,6 +149,35 @@ app.put('/api/fact/:id', async (req, res) => {
     }
 });
 
+// POST "/api/fact"
+app.post('/api/fact', async (req, res) => {
+    try {
+        const { title, fact, package_id } = req.body;
+        const factCreated = await LearningFact.create({ title, fact, package_id });
+        res.json(factCreated);
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+});
+
+// DELETE "/api/fact/:id"
+app.delete('/api/fact/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const factFound = await LearningFact.findByPk(id);
+        if (factFound) {
+            await factFound.destroy();
+            res.json(factFound);
+        } else {
+            res.status(404).json({ error: 'Fact not found' });
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' })
+    }
+});
+
 // GET "/api/user"
 app.get('/api/user', async (req, res) => {
     try {

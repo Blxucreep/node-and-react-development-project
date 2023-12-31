@@ -31,10 +31,6 @@ import { GlossaryComponent } from './glossary/glossary.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { SupportComponent } from './support/support.component';
 
-import { CreateAccountComponent } from './create-account/create-account.component';
-import { LoginComponent } from "./login/login.component";
-import { SettingsComponent } from "./settings/settings.component";
-
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 import { EditLessonComponent } from "./edit-lesson/edit-lesson.component";
 import { EditFactComponent } from './edit-fact/edit-fact.component';
@@ -58,10 +54,6 @@ import { EditFactComponent } from './edit-fact/edit-fact.component';
     GlossaryComponent,
     DocumentationComponent,
     SupportComponent,
-
-    CreateAccountComponent,
-    LoginComponent,
-    SettingsComponent,
 
     LessonDetailComponent,
     EditLessonComponent,

@@ -157,6 +157,36 @@ app.put('/api/fact/:id', (req, res) => __awaiter(void 0, void 0, void 0, functio
         res.status(500).json({ error: 'Internal error' });
     }
 }));
+// POST "/api/fact"
+app.post('/api/fact', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { title, fact, package_id } = req.body;
+        const factCreated = yield LearningFact.create({ title, fact, package_id });
+        res.json(factCreated);
+    }
+    catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+}));
+// DELETE "/api/fact/:id"
+app.delete('/api/fact/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id } = req.params;
+        const factFound = yield LearningFact.findByPk(id);
+        if (factFound) {
+            yield factFound.destroy();
+            res.json(factFound);
+        }
+        else {
+            res.status(404).json({ error: 'Fact not found' });
+        }
+    }
+    catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+}));
 // GET "/api/user"
 app.get('/api/user', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
