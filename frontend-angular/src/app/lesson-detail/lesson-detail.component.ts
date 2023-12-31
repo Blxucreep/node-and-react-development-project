@@ -45,4 +45,18 @@ export class LessonDetailComponent implements OnInit {
       }
     );
   }
+
+  onClickDeleteFact(factId: string) {
+    this.databaseService.deleteFactById(factId).subscribe(
+      (response) => {
+        console.log('Fact deleted:', response);
+        
+        // refresh facts
+        this.fetchFactsByPackageId(this.package.package_id);
+      },
+      (error) => {
+        console.error('Error deleting fact:', error);
+      }
+    );
+  }
 }

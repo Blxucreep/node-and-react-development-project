@@ -60,7 +60,7 @@
             <p>{{ fact.fact }}</p>
 
             <a routerLink="/lesson-detail/{{ package.package_id }}/edit-fact/{{ fact.fact_id }}">Edit Fact</a>
-            <a routerLink="/lesson-detail/{{ package.package_id }}/delete-fact/{{ fact.fact_id }}">Delete Fact</a>
+            <a routerLink="/lesson-detail/{{ package.package_id }}/delete-fact/{{ fact.fact_id }}" (click)="onClickDeleteFact(fact.fact_id)">Delete Fact</a>
 
             <br>
         </div>

@@ -6,8 +6,16 @@
     <title>Fact Edit Form</title>
 </head>
 <body>
-    <h1>Edit Fact</h1>
-    <p>Use this form to edit the details of the fact.</p>
+    <ng-container *ngIf="editMode; else addFactTemplate">
+        <h1>Edit Fact</h1>
+        <p>Use this form to edit the details of the fact.</p>
+    </ng-container>
+    
+    <ng-template #addFactTemplate>
+        <h1>Add Fact</h1>
+        <p>Use this form to add a new fact to the package.</p>
+    </ng-template>
+    
     <div class="container fact-form-container" [formGroup]="factForm">
         <div class="row mt-2">
             <label class="col-md-2" for="title" [class]="factForm.get('title')?.invalid ? 'text-danger' : ''">Title</label>
