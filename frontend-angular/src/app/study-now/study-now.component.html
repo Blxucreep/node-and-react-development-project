@@ -1,57 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Ajoutez votre style CSS personnalisé ici */
+<!-- study-now.component.html -->
 
-    .timer {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
-<header>
-  <h1>Anki Study Now</h1>
-</header>
-
-<main>
-  <section class="study-now">
-    <div class="study-now-banner">
-      <p>View Lesson</p>
-    </div>
-
-    <div class="study-now-content">
-      <h2>Browse Available Lessons</h2>
-      <p>Below are the lessons available for exploration:</p>
-
-      <div class="lesson-list">
-        <div class="lesson-item" *ngFor="let package of packages">
-          <h3>{{ package.title }}</h3>
-          <p>{{ package.description }}</p>
-          <a (click)="startTimer()">Study Now</a>
+<select [(ngModel)]="selectedCourseId" (change)="onCourseSelected()">
+    <option value="" disabled>Select a course</option>
+    <option *ngFor="let course of courses" [value]="course.id">{{ course.title }}</option>
+  </select>
+  
+  <div *ngIf="packageDetails">
+    <h2>{{ packageDetails.title }}</h2>
+    <div *ngFor="let fact of packageDetails.facts" class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h3>{{ fact.question }}</h3>
+        </div>
+        <div class="flip-card-back">
+          <p>{{ fact.answer }}</p>
         </div>
       </div>
     </div>
-  </section>
-</main>
-
-<footer>
-  <p>&copy; 2023 Anki. All rights reserved.</p>
-</footer>
-
-<script>
-  function startTimer() {
-    let timerValue = 0;
-    const timerElement = document.querySelector('.timer');
-
-    const intervalId = setInterval(() => {
-      timerValue++;
-      timerElement.textContent = timerValue.toString();
-    }, 1000);
-  }
-</script>
-</body>
-</html>
+  </div>
+  
