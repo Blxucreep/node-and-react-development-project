@@ -17,7 +17,6 @@ import { DocumentationComponent } from './documentation/documentation.component'
 import { SupportComponent } from './support/support.component';
 
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
-import { LessonPackageComponent } from './lesson-package/lesson-package.component';
 import { EditLessonComponent } from "./edit-lesson/edit-lesson.component";
 import { EditFactComponent } from './edit-fact/edit-fact.component';
 
