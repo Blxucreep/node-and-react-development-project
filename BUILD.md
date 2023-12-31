@@ -5,14 +5,13 @@
 Globally, typescript should be installed:
 - `npm install -g typescript`
 
-Because of some errors, the following command should be run:
-- `npm i --save-dev @types/express`
-
 To install the dependencies, run the following command:
+- `npm install cors`
 - `npm install -s express`
 - `npm install sequelize sequelize-typescript pg pg-hstore`
-- `npm install cors`
-- `npm install chart.js primeng --force`
+
+Because of some errors, the following command should be run:
+- `npm i --save-dev @types/express`
 
 Then, create a new role in PostgreSQL. Go to pgAdmin 4 and create a new role named `LearningUser` with the password `root` and all privileges (see below):
 ![LearningUser role]('captures/role.png')
@@ -34,6 +33,10 @@ Globally, @angular-cli should be installed:
 - `npm install -g @angular/cli`
 
 To install the dependencies, run the following command:
+- `npm install chart.js primeng --force`
+
+
+
 - 
 - `npm install primeng --force`
 - `npm install @angular/router @angular/animations --force`
