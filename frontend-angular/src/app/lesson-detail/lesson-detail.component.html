@@ -1,5 +1,3 @@
-<!-- lesson-detail.component.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,23 +21,51 @@
         
         <div class="lesson-info">
           <label for="lesson-title">Title:</label>
-          <p>{{ lesson.title }}</p>
+          <p>{{ package.title }}</p>
           
           <label for="lesson-description">Description:</label>
-          <p>{{ lesson.description }}</p>
-
-          <!-- Ajoutez d'autres champs en fonction de votre modèle de données -->
-          <label for="lesson-level">Level:</label>
-          <p>{{ lesson.level }}</p>
+          <p>{{ package.description }}</p>
 
           <label for="lesson-category">Category:</label>
-          <p>{{ lesson.category }}</p>
+          <p>{{ package.category }}</p>
+
+          <label for="lesson-level">Level:</label>
+          <p>{{ package.level }}</p>
 
           <label for="lesson-prerequisite">Prerequisite:</label>
-          <p>{{ lesson.prerequisite }}</p>
+          <p>{{ package.prerequisite }}</p>
 
-          <!-- Ajoutez d'autres champs si nécessaire -->
+          <label for="lesson-tags">Tags:</label>
+          <p>{{ package.tags }}</p>
+
+          <label for="lesson-license">License:</label>
+          <p>{{ package.license }}</p>
+
+          <br>
         </div>
+
+        <a routerLink="/edit-lesson/{{ package.package_id }}">Edit Lesson</a>
+      </div>
+
+      <br>
+
+      <div class="lesson-detail-content">
+        <h2>Lesson Content</h2>
+        
+        <div class="lesson-info" *ngFor="let fact of facts; let i = index">
+            <label for="fact-title">Fact n°{{ i + 1 }}:</label>
+            <p>{{ fact.title }}</p>
+
+            <label for="fact-fact">Description:</label>
+            <p>{{ fact.fact }}</p>
+
+            <a routerLink="/edit-fact/{{ fact.fact_id }}">Edit Fact</a>
+            <a routerLink="/delete-fact/{{ fact.fact_id }}">Delete Fact</a>
+
+            <br>
+        </div>
+
+        <a routerLink="/add-fact/{{ package.package_id }}">Add Fact</a>
       </div>
     </section>
   </main>

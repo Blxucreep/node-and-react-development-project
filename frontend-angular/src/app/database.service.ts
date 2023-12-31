@@ -15,4 +15,16 @@ export class DatabaseService {
     const url = `${this.apiUrl}/api/package`;
     return this.httpClient.get<any[]>(url);
   }
+
+  // GET "/api/package/:id"
+  public getPackageById(id: string): Observable<any> {
+    const url = `${this.apiUrl}/api/package/${id}`;
+    return this.httpClient.get<any>(url);
+  }
+
+  // GET "/api/package/:id/fact"
+  public getFactsByPackageId(id: string): Observable<any[]> {
+    const url = `${this.apiUrl}/api/package/${id}/fact`;
+    return this.httpClient.get<any[]>(url);
+  }
 }

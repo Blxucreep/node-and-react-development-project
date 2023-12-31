@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../database.service';
-import { Data } from '@angular/router';
 
 @Component({
   selector: 'app-explore-lesson',

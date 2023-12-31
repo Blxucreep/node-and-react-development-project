@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http'; // Importer le module HttpClient
+import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-lesson-detail',
@@ -9,26 +8,41 @@ import { HttpClient } from '@angular/common/http'; // Importer le module HttpCli
   styleUrls: ['./lesson-detail.component.css']
 })
 export class LessonDetailComponent implements OnInit {
-  lesson: any;
+  package: any = {};
+  facts: any = [];
 
-  constructor(private route: ActivatedRoute, private httpClient: HttpClient) {}
+  constructor(
+    private route: ActivatedRoute,
+    private databaseService: DatabaseService
+  ) { };
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      const lessonId = +params['id']; // Convertir l'ID en nombre
-
-      if (!isNaN(lessonId)) {
-        this.httpClient.get<any>(`localhost:3000/api/package/${lessonId}`).subscribe(
-          (lesson) => {
-            this.lesson = lesson;
-          },
-          (error) => {
-            console.error('Error fetching lesson details:', error);
-          }
-        );
-      } else {
-        console.error('Invalid lesson ID');
-      }
+      const packageId = params['id'];
+      this.fetchPackageById(packageId);
+      this.fetchFactsByPackageId(packageId);
     });
+  }
+
+  fetchPackageById(packageId: string) {
+    this.databaseService.getPackageById(packageId).subscribe(
+      (response) => {
+        this.package = response;
+      },
+      (error) => {
+        console.error('Error fetching package:', error);
+      }
+    );
+  }
+
+  fetchFactsByPackageId(packageId: string) {
+    this.databaseService.getFactsByPackageId(packageId).subscribe(
+      (response) => {
+        this.facts = response;
+      },
+      (error) => {
+        console.error('Error fetching facts:', error);
+      }
+    );
   }
 }

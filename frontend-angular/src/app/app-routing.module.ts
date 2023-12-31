@@ -24,6 +24,7 @@ import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 
 const routes: Routes = [
   { path: 'import-lesson', component: ImportLessonComponent },
+  { path: 'edit-lesson/:id', component: EditLessonComponent },
   { path: 'edit-lesson', component: EditLessonComponent },
   { path: 'explore-lesson', component: ExploreLessonComponent },
   { path: 'export-lesson', component: ExportLessonComponent },
@@ -41,7 +42,9 @@ const routes: Routes = [
   { path: 'create-account', component: CreateAccountComponent },
   { path: 'login', component: LoginComponent },
   { path: 'settings', component: SettingsComponent },
+
   { path: 'lesson-detail', component: LessonDetailComponent },
+  { path: 'lesson-detail/:id', component: LessonDetailComponent },
 ];
 
 @NgModule({

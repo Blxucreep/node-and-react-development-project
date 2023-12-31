@@ -4,7 +4,10 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class LearningPackage extends Model {
         static associate(models) {
-
+            LearningPackage.hasMany(models.LearningFact, {
+                foreignKey: 'package_id',
+                targetKey: 'package_id',
+            });
         }
     }
 

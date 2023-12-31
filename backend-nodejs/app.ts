@@ -25,6 +25,10 @@ const LearningPackage = setupLearningPackageModel(sequelize, DataTypes);
 const LearningFact = setupLearningFactModel(sequelize, DataTypes);
 const User = setupUser(sequelize, DataTypes);
 
+// setup associations
+LearningPackage.associate({ LearningFact });
+LearningFact.associate({ LearningPackage });
+
 // make sure that all models are synced
 sequelize.sync();
 
@@ -58,6 +62,89 @@ app.get('/api/package/:id', async (req, res) => {
             res.json(packageFound);
         } else {
             res.status(404).json({ error: 'Package not found' });
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+});
+
+// POST "/api/package/:id"
+app.post('/api/package', async (req, res) => {
+    try {
+        const { title, description, category, level, prerequisite, tags, license } = req.body;
+        const newPackage = await LearningPackage.create({ title, description, category, level, prerequisite, tags, license });
+        res.json(newPackage);
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+});
+
+// GET "/api/package/:id/fact"
+app.get('/api/package/:id/fact', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const packageFound = await LearningPackage.findByPk(id);
+        if (packageFound) {
+            const facts = await packageFound.getLearningFacts();
+            res.json(facts);
+        } else {
+            res.status(404).json({ error: 'Package not found' });
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+});
+
+// GET "/api/fact"
+app.get('/api/fact', async (req, res) => {
+    try {
+        const facts = await LearningFact.findAll();
+        res.json(facts);
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+});
+
+// GET "/api/fact/:id"
+app.get('/api/fact/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const factFound = await LearningFact.findByPk(id);
+        if (factFound) {
+            res.json(factFound);
+        } else {
+            res.status(404).json({ error: 'Fact not found' });
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+});
+
+// GET "/api/user"
+app.get('/api/user', async (req, res) => {
+    try {
+        const users = await User.findAll();
+        res.json(users);
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+});
+
+// GET "/api/user/:id"
+app.get('/api/user/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const userFound = await User.findByPk(id);
+        if (userFound) {
+            res.json(userFound);
+        } else {
+            res.status(404).json({ error: 'User not found' });
         }
     } catch (error) {
         console.error('Error:', error);
