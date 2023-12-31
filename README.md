@@ -22,7 +22,7 @@ Upload and store lessons on your computer in different formats such as PDF, docx
 Access the core of the website, where you can delve into the content of each lesson through informative cards.
 ![Study Now](captures/study-now.png)
 
-## Statistics
+## Progress Statistics
 Check how much time you've spent reading your lessons.
 ![Statistics](captures/statistics.png)
 
