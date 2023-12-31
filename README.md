@@ -1,6 +1,6 @@
 # Node and React Development Project
 
-Welcome to the Node and React Development Project! In this documentation, we'll showcase various screenshots of our app to help you understand the purpose of each page.
+Welcome to our Node and React Development project ! In this documentation, we'll showcase various screenshots of our app to help you understand the purpose of each page.
 
 ## Home Page
 The home page is simple, providing an overview of the project's goals.
