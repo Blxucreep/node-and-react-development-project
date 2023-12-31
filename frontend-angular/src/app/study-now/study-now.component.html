@@ -1,21 +1,47 @@
-<!-- study-now.component.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards</title>
+</head>
+<body>
 
-<select [(ngModel)]="selectedCourseId" (change)="onCourseSelected()">
-    <option value="" disabled>Select a course</option>
-    <option *ngFor="let course of courses" [value]="course.id">{{ course.title }}</option>
-  </select>
-  
-  <div *ngIf="packageDetails">
-    <h2>{{ packageDetails.title }}</h2>
-    <div *ngFor="let fact of packageDetails.facts" class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h3>{{ fact.question }}</h3>
-        </div>
-        <div class="flip-card-back">
-          <p>{{ fact.answer }}</p>
+  <header>
+    <h1>Study Now</h1>
+    <p>Instructions for the user: please select the course you want to study.</p>
+    <p>For each card, you can click on the button 'Reviewed'.</p>
+    <p>When you are done with a course, you can click on the button 'Finish Lesson'.</p>
+  </header>
+
+  <main>
+    <p>Select a lesson from the dropdown below:</p>
+
+    <select [(ngModel)]="package_id" (change)="onCourseSelected()">
+      <option value="" disabled>Select a lesson</option>
+      <option *ngFor="let package of packages" [value]="package.package_id">{{ package.title }}</option>
+    </select>
+
+    <div *ngIf="facts" class="lesson-list">
+      <div *ngFor="let fact of facts" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>{{ fact.title }}</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>{{ fact.fact }}</p>
+            <button class="review-button" (click)="onClickRewiewed(fact.fact_id)">Reviewed</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
+
+    <button class="finish-lesson-button" (click)="onClickFinish()" *ngIf="facts.length > 0">Finish Lesson</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Anki. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

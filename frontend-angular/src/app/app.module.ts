@@ -24,7 +24,6 @@ import { ExploreLessonComponent } from './explore-lesson/explore-lesson.componen
 import { ExportLessonComponent } from './export-lesson/export-lesson.component';
 
 import { StudyNowComponent } from './study-now/study-now.component';
-import { CardsComponent } from './cards/cards.component';
 
 import { ProgressStatisticsComponent } from './progress-statistics/progress-statistics.component';
 
@@ -61,7 +60,6 @@ import { EditFactComponent } from './edit-fact/edit-fact.component';
     LessonDetailComponent,
     EditLessonComponent,
     EditFactComponent,
-    CardsComponent,
   ],
   imports: [
     AppRoutingModule,

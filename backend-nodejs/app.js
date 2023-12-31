@@ -232,11 +232,95 @@ app.get('/api/userlearningfact', (req, res) => __awaiter(void 0, void 0, void 0,
         res.status(500).json({ error: 'Internal error' });
     }
 }));
+// GET "api/userlearningfact/:fact_id" fact_id is a foreign key
+app.get('/api/userlearningfact/:fact_id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { fact_id } = req.params;
+        const userLearningFactFound = yield UserLearningFact.findOne({ where: { fact_id } });
+        if (userLearningFactFound) {
+            res.json(userLearningFactFound);
+        }
+        else {
+            res.status(404).json({ error: 'User learning fact not found' });
+        }
+    }
+    catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+}));
+// POST "api/userlearningfact"
+app.post('/api/userlearningfact', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { fact_id, user_id, timesReviewed } = req.body;
+        const userLearningFactCreated = yield UserLearningFact.create({ fact_id, user_id, timesReviewed });
+        res.json(userLearningFactCreated);
+    }
+    catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+}));
+// PUT "api/userlearningfact/:fact_id" fact_id is a foreign key
+app.put('/api/userlearningfact/:fact_id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { fact_id } = req.params;
+        const userLearningFactFound = yield UserLearningFact.findOne({ where: { fact_id } });
+        if (userLearningFactFound) {
+            const { timesReviewed } = req.body;
+            yield userLearningFactFound.update({ fact_id, timesReviewed });
+            res.json(userLearningFactFound);
+        }
+        else {
+            res.status(404).json({ error: 'User learning fact not found' });
+        }
+    }
+    catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+}));
 // GET "api/userlearningpackage"
 app.get('/api/userlearningpackage', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const userLearningPackages = yield UserLearningPackage.findAll();
         res.json(userLearningPackages);
+    }
+    catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+}));
+// GET "api/userlearningpackage/:package_id" package_id is a foreign key
+app.get('/api/userlearningpackage/:package_id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { package_id } = req.params;
+        const userLearningPackageFound = yield UserLearningPackage.findOne({ where: { package_id } });
+        if (userLearningPackageFound) {
+            res.json(userLearningPackageFound);
+        }
+        else {
+            res.status(404).json({ error: 'User learning package not found' });
+        }
+    }
+    catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+}));
+// PUT "api/userlearningpackage/:package_id" package_id is a foreign key
+app.put('/api/userlearningpackage/:package_id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { package_id } = req.params;
+        const userLearningPackageFound = yield UserLearningPackage.findOne({ where: { package_id } });
+        if (userLearningPackageFound) {
+            const { minutes } = req.body;
+            yield userLearningPackageFound.update({ package_id, minutes });
+            res.json(userLearningPackageFound);
+        }
+        else {
+            res.status(404).json({ error: 'User learning package not found' });
+        }
     }
     catch (error) {
         console.error('Error:', error);

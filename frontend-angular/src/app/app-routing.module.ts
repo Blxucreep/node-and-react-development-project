@@ -6,7 +6,6 @@ import { ExploreLessonComponent } from './explore-lesson/explore-lesson.componen
 import { ExportLessonComponent } from './export-lesson/export-lesson.component';
 
 import { StudyNowComponent } from './study-now/study-now.component';
-import { CardsComponent } from './cards/cards.component';
 
 import { ProgressStatisticsComponent } from './progress-statistics/progress-statistics.component';
 
@@ -17,7 +16,6 @@ import { DocumentationComponent } from './documentation/documentation.component'
 import { SupportComponent } from './support/support.component';
 
 import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
-import { LessonPackageComponent } from './lesson-package/lesson-package.component';
 import { EditLessonComponent } from "./edit-lesson/edit-lesson.component";
 import { EditFactComponent } from './edit-fact/edit-fact.component';
 
@@ -27,7 +25,6 @@ const routes: Routes = [
   { path: 'export-lesson', component: ExportLessonComponent },
 
   { path: 'study-now', component: StudyNowComponent },
-  { path: 'cards/:id', component: CardsComponent },
 
   { path: 'progress-statistics', component: ProgressStatisticsComponent },
 

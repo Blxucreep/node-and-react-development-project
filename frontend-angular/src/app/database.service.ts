@@ -64,9 +64,41 @@ export class DatabaseService {
     return this.httpClient.get<any[]>(url);
   }
 
-  // GET "/api/userlearningpackage"
+  // GET "/api/userlearningfact/:fact_id"
+  public getUserLearningFactById(fact_id: string): Observable<any> {
+    const url = `${this.apiUrl}/api/userlearningfact/${fact_id}`;
+    return this.httpClient.get<any>(url);
+  }
+
+  // POST "/api/userlearningfact"
+  public createUserLearningFact(data: any): Observable<any> {
+    const url = `${this.apiUrl}/api/userlearningfact`;
+    return this.httpClient.post<any>(url, data);
+  }
+
+  // PUT "/api/userlearningfact/:fact_id"
+  public updateUserLearningFactById(fact_id: string, timesReviewed: number): Observable<any> {
+    const url = `${this.apiUrl}/api/userlearningfact/${fact_id}`;
+    const data = { timesReviewed: timesReviewed };
+    return this.httpClient.put<any>(url, data);
+  }
+
+  // GET "/api/userlearningpackage/"
   public getUserLearningPackages(): Observable<any[]> {
     const url = `${this.apiUrl}/api/userlearningpackage`;
     return this.httpClient.get<any[]>(url);
+  }
+
+  // GET "/api/userlearningpackage/:package_id"
+  public getUserLearningPackageById(package_id: string): Observable<any> {
+    const url = `${this.apiUrl}/api/userlearningpackage/${package_id}`;
+    return this.httpClient.get<any>(url);
+  }
+
+  // PUT "/api/userlearningpackage/:package_id"
+  public updateUserLearningPackageById(package_id: string, minutes: number): Observable<any> {
+    const url = `${this.apiUrl}/api/userlearningpackage/${package_id}`;
+    const data = { minutes: minutes };
+    return this.httpClient.put<any>(url, data);
   }
 }
