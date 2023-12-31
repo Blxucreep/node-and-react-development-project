@@ -6,6 +6,7 @@ module.exports = {
       {
         user_id: 1,
         minutesPerDayObjective: 30,
+        achieved: 10,
       },
     ], {});
   },
