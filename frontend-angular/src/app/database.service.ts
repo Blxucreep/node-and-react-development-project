@@ -57,4 +57,16 @@ export class DatabaseService {
     const url = `${this.apiUrl}/api/fact/${id}`;
     return this.httpClient.delete<any>(url);
   }
+
+  // GET "/api/userlearningfact"
+  public getUserLearningFacts(): Observable<any[]> {
+    const url = `${this.apiUrl}/api/userlearningfact`;
+    return this.httpClient.get<any[]>(url);
+  }
+
+  // GET "/api/userlearningpackage"
+  public getUserLearningPackages(): Observable<any[]> {
+    const url = `${this.apiUrl}/api/userlearningpackage`;
+    return this.httpClient.get<any[]>(url);
+  }
 }

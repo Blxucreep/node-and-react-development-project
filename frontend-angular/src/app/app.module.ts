@@ -9,6 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { BrowserModule } from '@angular/platform-browser';
 
+import { ChartModule } from 'primeng/chart';
+
 import { ChipsModule } from 'primeng/chips';
 
 import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
@@ -60,17 +62,20 @@ import { EditFactComponent } from './edit-fact/edit-fact.component';
     EditFactComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    
-    NgbModule,
 
     FormsModule,
-    ReactiveFormsModule, // <= for supports FormGroup/FormBuilder
+    ReactiveFormsModule,
+
+    NgbModule,
+
+    BrowserModule,
+
+    ChartModule,
 
     ChipsModule,
-
+    
     FontAwesomeModule
   ],
   providers: [],

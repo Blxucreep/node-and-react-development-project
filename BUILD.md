@@ -8,10 +8,11 @@ Globally, typescript should be installed:
 Because of some errors, the following command should be run:
 - `npm i --save-dev @types/express`
 
-To add/install the dependencies, run the following command:
-- `ng add ng2-charts`
+To install the dependencies, run the following command:
 - `npm install -s express`
-- `npm install sequelize sequelize-typescript pg pg-hstore cors`
+- `npm install sequelize sequelize-typescript pg pg-hstore`
+- `npm install cors`
+- `npm install chart.js primeng --force`
 
 Then, create a new role in PostgreSQL. Go to pgAdmin 4 and create a new role named `LearningUser` with the password `root` and all privileges (see below):
 ![LearningUser role]('captures/role.png')

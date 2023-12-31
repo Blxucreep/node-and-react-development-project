@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { Label } from 'ng2-charts';
+import { DatabaseService } from '../database.service';  // Assurez-vous que le chemin est correct
 
 @Component({
   selector: 'app-progress-statistics',
@@ -9,23 +7,53 @@ import { Label } from 'ng2-charts';
   styleUrls: ['./progress-statistics.component.css']
 })
 export class ProgressStatisticsComponent {
-  public barChartOptions: ChartOptions = {
-    responsive: true,
-  };
-  public barChartLabels: Label[] = [];
-  public barChartType: ChartType = 'bar';
-  public barChartLegend = true;
-  public barChartData: ChartDataSets[] = [];
+  data: any;
+  selectedChartType: string = 'timesReviewed';
 
-  constructor(private http: HttpClient) {}
-
-  ngOnInit() {
-    this.getDataForChart();
+  constructor(private databaseService: DatabaseService) {
+    // initialize data
+    this.data = [];
   }
 
-  getDataForChart(): void {
-    this.http.get<any>('/api/your-endpoint').subscribe(data => {
-      // Mettez à jour barChartLabels et barChartData avec les données obtenues
-    });
+  ngOnInit() {
+    this.loadData();
+  }
+
+  loadData() {
+    if (this.selectedChartType === 'timesReviewed') {
+      this.databaseService.getUserLearningFacts().subscribe((facts) => {
+        this.data = {
+          labels: facts.map(fact => `Fact ${fact.fact_id}`),
+          datasets: [
+            {
+              label: 'Times Reviewed',
+              data: facts.map(fact => fact.timesReviewed),
+              backgroundColor: 'rgba(0, 123, 255, 0.5)',
+              borderColor: 'rgba(0, 123, 255, 1)',
+              borderWidth: 1
+            }
+          ]
+        };
+      });
+    } else if (this.selectedChartType === 'minutes') {
+      this.databaseService.getUserLearningPackages().subscribe((packages) => {
+        this.data = {
+          labels: packages.map(pkg => `Lesson ${pkg.package_id}`),
+          datasets: [
+            {
+              label: 'Minutes On',
+              data: packages.map(pkg => pkg.minutes),
+              backgroundColor: 'rgba(0, 123, 255, 0.5)',
+              borderColor: 'rgba(0, 123, 255, 1)',
+              borderWidth: 1
+            }
+          ]
+        };
+      });
+    }
+  }
+
+  onChartTypeChange() {
+    this.loadData();
   }
 }
