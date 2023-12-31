@@ -221,3 +221,14 @@ app.get('/api/user/:id', (req, res) => __awaiter(void 0, void 0, void 0, functio
         res.status(500).json({ error: 'Internal error' });
     }
 }));
+// GET "api/userlearningfact"
+app.get('/api/userlearningfact', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const userLearningFacts = yield UserLearningFact.findAll();
+        res.json(userLearningFacts);
+    }
+    catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal error' });
+    }
+}));

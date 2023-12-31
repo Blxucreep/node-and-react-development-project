@@ -11,12 +11,12 @@ module.exports = {
         {
             user_id: 1,
             package_id: 2,
-            minutes: 0,
+            minutes: 10,
         },
         {
             user_id: 1,
             package_id: 3,
-            minutes: 0,
+            minutes: 12,
         },
         {
             user_id: 1,
@@ -26,7 +26,7 @@ module.exports = {
         {
             user_id: 1,
             package_id: 5,
-            minutes: 0,
+            minutes: 20,
         },
         {
             user_id: 1,
@@ -36,7 +36,7 @@ module.exports = {
         {
             user_id: 1,
             package_id: 7,
-            minutes: 0,
+            minutes: 34,
         },
         {
             user_id: 1,
@@ -46,7 +46,7 @@ module.exports = {
         {
             user_id: 1,
             package_id: 9,
-            minutes: 0,
+            minutes: 7,
         },
         {
             user_id: 1,

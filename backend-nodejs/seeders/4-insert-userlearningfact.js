@@ -6,17 +6,17 @@ module.exports = {
         {
             user_id: 1,
             fact_id: 1,
-            timesReviewed: 0,
+            timesReviewed: 12,
         },
         {
             user_id: 1,
             fact_id: 2,
-            timesReviewed: 0,
+            timesReviewed: 4,
         },
         {
             user_id: 1,
             fact_id: 3,
-            timesReviewed: 0,
+            timesReviewed: 2,
         },
         {
             user_id: 1,
@@ -26,7 +26,7 @@ module.exports = {
         {
             user_id: 1,
             fact_id: 5,
-            timesReviewed: 0,
+            timesReviewed: 1,
         },
         {
             user_id: 1,
@@ -36,12 +36,12 @@ module.exports = {
         {
             user_id: 1,
             fact_id: 7,
-            timesReviewed: 0,
+            timesReviewed: 7,
         },
         {
             user_id: 1,
             fact_id: 8,
-            timesReviewed: 0,
+            timesReviewed: 23,
         },
         {
             user_id: 1,
@@ -51,7 +51,7 @@ module.exports = {
         {
             user_id: 1,
             fact_id: 10,
-            timesReviewed: 0,
+            timesReviewed: 1,
         },
     ], {});
   },
