@@ -1,4 +1,4 @@
-// models/LearningPackage.js
+// models/learningpackage.js
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {

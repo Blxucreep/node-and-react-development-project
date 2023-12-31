@@ -18,6 +18,8 @@ const sequelize_1 = require("sequelize");
 const learningpackage_1 = __importDefault(require("./models/learningpackage"));
 const learningfact_1 = __importDefault(require("./models/learningfact"));
 const user_1 = __importDefault(require("./models/user"));
+const userlearningfact_1 = __importDefault(require("./models/userlearningfact"));
+const userlearningpackage_1 = __importDefault(require("./models/userlearningpackage"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 const port = 3000;
@@ -33,9 +35,13 @@ const sequelize = new sequelize_1.Sequelize({
 const LearningPackage = (0, learningpackage_1.default)(sequelize, sequelize_1.DataTypes);
 const LearningFact = (0, learningfact_1.default)(sequelize, sequelize_1.DataTypes);
 const User = (0, user_1.default)(sequelize, sequelize_1.DataTypes);
+const UserLearningFact = (0, userlearningfact_1.default)(sequelize, sequelize_1.DataTypes);
+const UserLearningPackage = (0, userlearningpackage_1.default)(sequelize, sequelize_1.DataTypes);
 // setup associations
 LearningPackage.associate({ LearningFact });
 LearningFact.associate({ LearningPackage });
+UserLearningFact.associate({ User, LearningFact });
+UserLearningPackage.associate({ User, LearningPackage });
 // make sure that all models are synced
 sequelize.sync();
 app.use(express_1.default.json());

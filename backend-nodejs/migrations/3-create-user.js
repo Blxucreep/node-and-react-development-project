@@ -12,6 +12,9 @@ module.exports = {
       minutesPerDayObjective: {
         type: Sequelize.INTEGER,
       },
+      achieved: {
+        type: Sequelize.INTEGER,
+      },
     });
   },
 

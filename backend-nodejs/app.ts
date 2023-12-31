@@ -5,6 +5,8 @@ import { Sequelize, DataTypes } from 'sequelize';
 import setupLearningPackageModel from './models/learningpackage';
 import setupLearningFactModel from './models/learningfact';
 import setupUser from './models/user';
+import setupUserLearningFactModel from './models/userlearningfact';
+import setupUserLearningPackageModel from './models/userlearningpackage';
 
 const app = express();
 app.use(cors());
@@ -24,10 +26,14 @@ const sequelize = new Sequelize({
 const LearningPackage = setupLearningPackageModel(sequelize, DataTypes);
 const LearningFact = setupLearningFactModel(sequelize, DataTypes);
 const User = setupUser(sequelize, DataTypes);
+const UserLearningFact = setupUserLearningFactModel(sequelize, DataTypes);
+const UserLearningPackage = setupUserLearningPackageModel(sequelize, DataTypes);
 
 // setup associations
 LearningPackage.associate({ LearningFact });
 LearningFact.associate({ LearningPackage });
+UserLearningFact.associate({ User, LearningFact });
+UserLearningPackage.associate({ User, LearningPackage });
 
 // make sure that all models are synced
 sequelize.sync();

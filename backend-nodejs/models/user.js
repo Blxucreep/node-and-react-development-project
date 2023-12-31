@@ -1,4 +1,4 @@
-// models/User.js
+// models/user.js
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
         },
         minutesPerDayObjective: {
+            type: DataTypes.INTEGER,
+        },
+        achieved: {
             type: DataTypes.INTEGER,
         },
     }, {
